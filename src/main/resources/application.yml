@@ -1,0 +1,64 @@
+# DataSource Config
+spring:
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://47.113.201.31:3306/contest?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+#    username: contest
+#    password: 123456
+#    url: jdbc:mysql://localhost:3306/contest?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+#    username: root
+#    password: w010823.
+    url: jdbc:mysql://192.168.3.177:3306/contest?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 1234
+
+  devtools:
+    restart:
+      enabled: true  #设置开启热部署
+      additional-paths: src/main/java #重启目录
+      exclude: WEB-INF/**
+  freemarker:
+    cache: false    #页面不加载缓存，修改即时生效
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    pcmassword:
+    jedis:
+      pool:
+        max-idle: 8
+        min-idle: 0
+        max-active: 8
+        max-wait: -1ms
+    database: 0
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**Mapper.xml
+server:
+  port: 8088
+contest:
+  jwt:
+    #加密秘钥
+    secret: f4e2e52034348f86b67cde581c0f9eb5
+    #有效时常，单位秒
+    expire: 604800
+    header: Authorization
+shiro-redis:
+  enabled: true
+  redis-manager:
+    host: 127.0.0.1:6379
+#file:
+#  location: D:/IdeaProjects/contest-spring/
+#  path: /files/**
+#
+#myfile:
+#  road: http://localhost:8088
+
+file:
+  location: D:/contest-spring/
+  path: /files/**
+
+myfile:
+  road: http://192.168.3.177:8088
