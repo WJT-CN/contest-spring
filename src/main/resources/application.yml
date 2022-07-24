@@ -6,15 +6,9 @@ spring:
       max-request-size: 100MB
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-#    url: jdbc:mysql://47.113.201.31:3306/contest?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
-#    username: contest
-#    password: 123456
-#    url: jdbc:mysql://localhost:3306/contest?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
-#    username: root
-#    password: w010823.
-    url: jdbc:mysql://192.168.3.177:3306/contest?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://localhost:3306/contest?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     username: root
-    password: 1234
+    password: root
 
   devtools:
     restart:
@@ -49,16 +43,9 @@ shiro-redis:
   enabled: true
   redis-manager:
     host: 127.0.0.1:6379
-#file:
-#  location: D:/IdeaProjects/contest-spring/
-#  path: /files/**
-#
-#myfile:
-#  road: http://localhost:8088
-
 file:
-  location: D:/contest-spring/
+  location: D:/IdeaProjects/contest-spring/
   path: /files/**
 
 myfile:
-  road: http://192.168.3.177:8088
+  road: http://localhost:8088
