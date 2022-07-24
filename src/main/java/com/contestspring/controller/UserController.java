@@ -147,6 +147,7 @@ public class UserController {
         User userInDB = userService.getOne(userQueryWrapper);
         userInDB.setEmail(requestUser.getEmail());
         userInDB.setStatus(true);
+
         userInDB.setRoles(requestUser.getRoles());
         userInDB.setUsertype(requestUser.getRoles().get(0).getNameZh());
         System.out.println(userInDB);
